@@ -1,20 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Placement Readiness</title>
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Student Placement Prediction</h2>
+
+<div class="container">
+    <h2>Student Placement Readiness</h2>
+
+    {% if error %}
+        <p style="color: red; text-align: center; margin-bottom: 15px;">
+            {{ error }}
+        </p>
+    {% endif %}
 
     <form action="/predict" method="post">
-        Attendance: <input type="number" name="attendance"><br><br>
-        Avg Marks: <input type="number" name="avg_marks"><br><br>
-        Python: <input type="number" name="python"><br><br>
-        SQL Skill: <input type="number" name="sql_skill"><br><br>
-        Aptitude: <input type="number" name="aptitude"><br><br>
-        Communication: <input type="number" name="communication"><br><br>
 
-        <button type="submit">Predict</button>
+        <div class="field">
+            <label>Attendance (%)</label>
+            <input type="number" name="attendance" required>
+        </div>
+
+        <div class="field">
+            <label>Average Marks</label>
+            <input type="number" name="avg_marks" required>
+        </div>
+
+        <div class="field">
+            <label>Python Skill</label>
+            <input type="number" name="python" required>
+        </div>
+
+        <div class="field">
+            <label>SQL Skill</label>
+            <input type="number" name="sql_skill" required>
+        </div>
+
+        <div class="field">
+            <label>Aptitude</label>
+            <input type="number" name="aptitude" required>
+        </div>
+
+        <div class="field">
+            <label>Communication</label>
+            <input type="number" name="communication" required>
+        </div>
+
+        <button type="submit">Predict Readiness</button>
+
     </form>
+</div>
+
 </body>
 </html>
