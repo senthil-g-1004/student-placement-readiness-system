@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Prediction Result</title>
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Placement Prediction Result</h2>
 
-    <p><strong>Status:</strong> {{ prediction }}</p>
+<div class="container">
+    <h2>Prediction Result</h2>
 
-    <a href="/"><button>Go Back</button></a>
+    <p class="result">
+        {{ prediction }}
+    </p>
+
+    <a href="/">
+        <button>Go Back</button>
+    </a>
+</div>
+
 </body>
 </html>
+
